@@ -25,6 +25,11 @@ function initAboutPortrait() {
 
 /* --- Mobile hamburger menu --- */
 function initMobileMenu() {
+    function updateNavMode() {
+    document.documentElement.classList.toggle('nav-mobile', window.matchMedia('(max-width: 860px)').matches);
+  }
+  window.addEventListener('resize', updateNavMode);
+  
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
   if (!hamburger || !navLinks) return;

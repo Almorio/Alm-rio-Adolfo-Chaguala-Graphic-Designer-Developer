@@ -135,3 +135,28 @@
   .preloader { transition: none; }
   .preloader-logo, .preloader-bar, .preloader-count { animation: none; opacity: 1; }
 }
+/* ===== FIX DEFINITIVO: fonte única de verdade (JS), sem @media a competir ===== */
+
+html.nav-mobile .hamburger { display: flex !important; }
+html.nav-mobile .nav-cta { display: none !important; }
+html.nav-mobile .nav-links {
+  display: flex !important;
+  position: fixed !important;
+  inset: 0 !important;
+  transform: translateX(100%) !important;
+  transition: transform .4s cubic-bezier(.22,.61,.36,1) !important;
+}
+html.nav-mobile .nav-links.is-open { transform: translateX(0) !important; }
+
+html:not(.nav-mobile) .hamburger { display: none !important; }
+html:not(.nav-mobile) .nav-cta { display: inline-flex !important; }
+html:not(.nav-mobile) .nav-links {
+  display: flex !important;
+  position: static !important;
+  transform: none !important;
+}
+
+/* Esconde o "scroll" em mobile para não sobrepor o botão Contactar-me */
+@media (max-width: 640px) {
+  .hero-scroll { display: none !important; }
+}
