@@ -78,6 +78,40 @@
   }
 
   document.addEventListener('DOMContentLoaded', initHeaderScroll);
+function initPreloader() {
+  const preloader = document.getElementById('preloader');
 
+  // Se a página não tiver o preloader no HTML, dispara logo a animação do hero.
+  if (!preloader) {
+    requestAnimationFrame(() => document.body.classList.add('is-loaded'));
+    return;
+  }
+
+  const fill = document.getElementById('preloader-fill');
+  const count = document.getElementById('preloader-count');
+  let progress = 0;
+
+  document.body.style.overflow = 'hidden';
+
+  function finish() {
+    preloader.classList.add('is-hidden');
+    document.body.style.overflow = '';
+    document.body.classList.add('is-loaded'); // liga a animação do hero (já existe em animations.css)
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+  }
+
+  const timer = setInterval(() => {
+    progress += Math.random() * 18 + 7;
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(timer);
+      setTimeout(finish, 280);
+    }
+    if (fill) fill.style.width = progress + '%';
+    if (count) count.textContent = Math.floor(progress) + '%';
+  }, 130);
+}
+
+document.addEventListener('DOMContentLoaded', initPreloader);
   window.PortfolioAnimations = { observeReveals, applyTilt };
 })();

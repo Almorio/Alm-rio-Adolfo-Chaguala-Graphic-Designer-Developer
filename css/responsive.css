@@ -64,3 +64,69 @@
   .project-card:hover,
   .code-card:hover { transform: none; }
 }
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--c-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .6s var(--ease), visibility .6s var(--ease);
+}
+
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.preloader-logo {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -.01em;
+  color: var(--c-white);
+  opacity: 0;
+  animation: rise .6s var(--ease) forwards .1s;
+}
+
+.preloader-logo .dot { color: var(--c-blue-bright); }
+
+.preloader-bar {
+  width: 220px;
+  height: 2px;
+  background: var(--c-gray-line);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: rise .6s var(--ease) forwards .25s;
+}
+
+.preloader-bar-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--c-blue-bright);
+  transition: width .18s linear;
+}
+
+.preloader-count {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--c-gray);
+  opacity: 0;
+  animation: rise .6s var(--ease) forwards .35s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader { transition: none; }
+  .preloader-logo, .preloader-bar, .preloader-count { animation: none; opacity: 1; }
+}
