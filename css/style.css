@@ -226,10 +226,12 @@ ul { list-style: none; }
 
 .hero {
   min-height: 100vh;
+  min-height: 100svh; /* usa a altura real visível em mobile, sem a barra de endereço */
   display: flex;
   align-items: center;
   position: relative;
   padding-top: 76px;
+  padding-bottom: 90px; /* dá espaço para o indicador de scroll não sobrepor os botões */
   background:
     radial-gradient(600px 300px at 85% 20%, rgba(50, 102, 255, .10), transparent 70%);
 }
@@ -320,7 +322,7 @@ ul { list-style: none; }
 
 .hero-scroll {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--f-mono);

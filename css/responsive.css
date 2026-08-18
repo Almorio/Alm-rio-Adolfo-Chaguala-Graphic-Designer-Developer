@@ -8,6 +8,7 @@
   :root { --gutter: 28px; }
 }
 
+
 /* --- Tablet --- */
 @media (max-width: 1024px) {
   .section { padding: 90px 0; }
@@ -18,14 +19,18 @@
   .about-portrait { max-width: 380px; }
 
   .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+}
 
-  .nav-links { display: none; }
+/* Nav / hamburger: um único breakpoint (860px) controla os dois lados,
+   sem !important, para não haver conflito nem "flicker". */
+@media (max-width: 860px) {
   .nav-cta { display: none; }
   .hamburger { display: flex; }
 }
 
 @media (min-width: 861px) {
-  .nav-links { display: flex !important; transform: none !important; position: static; background: none; }
+  .nav-links { display: flex; transform: none; position: static; background: none; }
+  .hamburger { display: none; }
 }
 
 /* --- Mobile --- */
