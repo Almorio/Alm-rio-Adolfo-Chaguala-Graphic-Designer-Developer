@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almorio Adolfo — Graphic Designer &amp; Developer</title>
+<meta name="description" content="Portfólio de Ana Duarte, Graphic Designer e Developer. Design gráfico, branding e projetos de programação.">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header">
+  <nav class="nav container">
+    <a href="#home" class="logo">AD<span class="dot">.</span></a>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="is-active">Home</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#codigo">Código</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <a href="#contacto" class="nav-cta">Vamos falar</a>
+
+    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HOME / HERO ============ -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">// design + código</p>
+      <h1 class="hero-name">Almório Adolfo<span class="hero-cursor"></span></h1>
+      <p class="hero-role">Graphic Designer <span class="accent">&amp;</span> Developer</p>
+      <p class="hero-desc">Crio identidades visuais fortes e depois transformo-as em interfaces reais. Do briefing ao browser, sem perder consistência entre design e código.</p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+        <a href="#contacto" class="btn btn-ghost">Contactar-me</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ============ DESIGN ============ -->
+  <section id="design" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Design</p>
+          <h2 class="section-title">Trabalhos de design gráfico</h2>
+        </div>
+        <p class="section-desc">Flyers, branding, social media, posters e identidade visual — clique numa peça para ver em tamanho grande.</p>
+      </div>
+
+      <div class="tabs" id="design-tabs"></div>
+      <div id="design-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROJETOS ============ -->
+  <section id="projetos" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Projetos</p>
+          <h2 class="section-title">Websites, landing pages &amp; aplicações</h2>
+        </div>
+        <p class="section-desc">Projetos completos, do design à implementação. Passe o rato sobre um card para o explorar em profundidade.</p>
+      </div>
+
+      <div id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ CÓDIGO ============ -->
+  <section id="codigo" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Código</p>
+          <h2 class="section-title">Projetos de programação</h2>
+        </div>
+        <p class="section-desc">Websites, front-end, JavaScript e experimentos — construídos com atenção ao detalhe técnico.</p>
+      </div>
+
+      <div class="tabs" id="code-tabs"></div>
+      <div id="code-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section id="sobre" class="section section-alt">
+    <div class="container about-grid">
+      <div class="about-portrait reveal" id="about-portrait"></div>
+
+      <div class="about-text">
+        <p class="eyebrow">Sobre</p>
+        <h2 class="section-title" style="margin-bottom:24px;">Design e desenvolvimento, na mesma pessoa</h2>
+        <p>Sou <strong>Almório Adolfo</strong>, designer gráfica e developer. Trabalho nas duas pontas de um projeto: crio a identidade visual e depois construo a interface que a materializa — o que evita perdas de consistência entre o conceito e o produto final.</p>
+        <p>Ao longo dos últimos anos tenho colaborado com marcas e negócios locais em branding, materiais gráficos e websites feitos à mão, com <strong>HTML, CSS e JavaScript puro</strong>, sem depender de templates genéricos.</p>
+        <p>Acredito em interfaces limpas, tipografia bem cuidada e microinterações que fazem sentido — nunca em efeitos só por efeito.</p>
+
+        <div class="stat-row">
+          <div class="stat"><b>60+</b><span>PROJETOS</span></div>
+          <div class="stat"><b>5</b><span>ANOS DE EXPERIÊNCIA</span></div>
+          <div class="stat"><b>2</b><span>ÁREAS DE ATUAÇÃO</span></div>
+        </div>
+
+        <ul class="skills-list">
+          <li>Identidade Visual</li>
+          <li>Branding</li>
+          <li>UI Design</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Figma</li>
+          <li>Motion Básico</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2 class="section-title">Vamos criar algo em conjunto</h2>
+        </div>
+        <p class="section-desc">Disponível para projetos de design, desenvolvimento ou ambos.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="mailto:almorioadolfo01@gmail.com" class="big-link">almorioadolfo01@gmail.com</a>
+          <a href="tel:+258 844 383 49" class="big-link">+258 844 383 49</a>
+
+          <div class="social-row">
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+            <a href="#" target="_blank" rel="noopener">Behance</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          <p class="form-status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Ana Duarte. Todos os direitos reservados.</span>
+    <span>Feito com HTML, CSS &amp; JavaScript puro.</span>
+    <a href="#home">Voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<script src="js/projects.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* ==========================================================================
+   ANIMATIONS.CSS
+   Keyframes + entrance sequences. Kept deliberately minimal —
+   motion supports content, it doesn't perform for its own sake.
+   ========================================================================== */
+
+/* --- Hero load-in sequence (driven by .is-loaded on <body>) --- */
+
+body.is-loaded .hero-eyebrow,
+body.is-loaded .hero-name,
+body.is-loaded .hero-role,
+body.is-loaded .hero-desc,
+body.is-loaded .hero-actions,
+body.is-loaded .hero-scroll {
+  animation: rise .9s var(--ease) forwards;
+}
+
+body.is-loaded .hero-eyebrow { animation-delay: .05s; }
+body.is-loaded .hero-name    { animation-delay: .15s; }
+body.is-loaded .hero-role    { animation-delay: .32s; }
+body.is-loaded .hero-desc    { animation-delay: .46s; }
+body.is-loaded .hero-actions { animation-delay: .58s; }
+body.is-loaded .hero-scroll  { animation-delay: .8s; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scrollHint {
+  0%, 100% { transform: translateY(0); opacity: .6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+.hero-scroll .line { animation: scrollHint 2.2s ease-in-out infinite; }
+
+/* --- Mobile nav panel --- */
+
+.nav-links {
+  transition: none;
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    z-index: 550;
+    background: var(--c-black-soft);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    transform: translateX(100%);
+    transition: transform var(--dur-med) var(--ease);
+  }
+
+  .nav-links.is-open { transform: translateX(0); }
+
+  .nav-links a { font-size: 22px; font-family: var(--f-display); font-weight: 500; }
+
+  .hamburger { display: flex; }
+}
+
+/* --- Reduced motion respect --- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* --- Card entrance stagger applied via JS (IntersectionObserver adds .is-visible) --- */
+
+.card-grid .reveal:nth-child(1) { transition-delay: .02s; }
+.card-grid .reveal:nth-child(2) { transition-delay: .08s; }
+.card-grid .reveal:nth-child(3) { transition-delay: .14s; }
+
+/* --- Terminal caret already handled by .blink keyframe in style.css --- */
+
+/* --- Fade utility for JS-toggled elements (modal, mobile menu backdrop) --- */
+
+.fade-in { animation: fadeIn var(--dur-med) var(--ease) forwards; }

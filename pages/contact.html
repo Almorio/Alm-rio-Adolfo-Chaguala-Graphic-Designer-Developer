@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Ana Duarte</title>
+<meta name="description" content="Fale com Ana Duarte sobre um novo projeto de design ou desenvolvimento.">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="../index.html#home" class="logo">AD<span class="dot">.</span></a>
+
+    <ul class="nav-links">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#design">Design</a></li>
+      <li><a href="projects.html">Projetos</a></li>
+      <li><a href="../index.html#codigo">Código</a></li>
+      <li><a href="../index.html#sobre">Sobre</a></li>
+      <li><a href="contact.html" class="is-active">Contacto</a></li>
+    </ul>
+
+    <a href="contact.html" class="nav-cta">Vamos falar</a>
+
+    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="section" style="padding-top:150px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2 class="section-title">Vamos criar algo em conjunto</h2>
+        </div>
+        <p class="section-desc">Disponível para projetos de design, desenvolvimento ou ambos.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="mailto:ola@anaduarte.design" class="big-link">ola@anaduarte.design</a>
+          <a href="tel:+351900000000" class="big-link">+351 900 000 000</a>
+
+          <div class="social-row">
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+            <a href="#" target="_blank" rel="noopener">Behance</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          <p class="form-status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Ana Duarte. Todos os direitos reservados.</span>
+    <span>Feito com HTML, CSS &amp; JavaScript puro.</span>
+    <a href="../index.html#home">Voltar à home ↑</a>
+  </div>
+</footer>
+
+<script src="../js/projects.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger?.addEventListener('click', () => {
+      const isOpen = !hamburger.classList.contains('is-open');
+      hamburger.classList.toggle('is-open', isOpen);
+      navLinks.classList.toggle('is-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      status.textContent = 'A enviar…';
+      setTimeout(() => {
+        status.textContent = 'Mensagem enviada. Obrigado pelo contacto — respondo em breve.';
+        form.reset();
+      }, 900);
+    });
+  });
+</script>
+</body>
+</html>

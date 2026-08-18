@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projetos — Ana Duarte</title>
+<meta name="description" content="Todos os projetos de website, aplicações e sistemas de Ana Duarte.">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="../index.html#home" class="logo">AD<span class="dot">.</span></a>
+
+    <ul class="nav-links">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#design">Design</a></li>
+      <li><a href="projects.html" class="is-active">Projetos</a></li>
+      <li><a href="../index.html#codigo">Código</a></li>
+      <li><a href="../index.html#sobre">Sobre</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+
+    <a href="contact.html" class="nav-cta">Vamos falar</a>
+
+    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="section" style="padding-top:150px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Projetos</p>
+          <h2 class="section-title">Todos os projetos</h2>
+        </div>
+        <p class="section-desc">A lista completa de websites, landing pages, aplicações, sistemas e trabalhos experimentais.</p>
+      </div>
+
+      <div id="projects-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Ana Duarte. Todos os direitos reservados.</span>
+    <span>Feito com HTML, CSS &amp; JavaScript puro.</span>
+    <a href="../index.html#home">Voltar à home ↑</a>
+  </div>
+</footer>
+
+<script src="../js/projects.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../js/gallery.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gridEl = document.getElementById('projects-grid');
+    if (gridEl && window.PortfolioData) {
+      const { PROJECTS_DATA, renderInBlocks, buildProjectCard } = window.PortfolioData;
+      renderInBlocks(gridEl, PROJECTS_DATA, buildProjectCard, { perBlock: 3 });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger?.addEventListener('click', () => {
+      const isOpen = !hamburger.classList.contains('is-open');
+      hamburger.classList.toggle('is-open', isOpen);
+      navLinks.classList.toggle('is-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+  });
+</script>
+</body>
+</html>
