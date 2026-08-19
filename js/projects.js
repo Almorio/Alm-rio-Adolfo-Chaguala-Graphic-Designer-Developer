@@ -13,9 +13,9 @@
 
 const DESIGN_CATEGORIES = [
   { id: 'flyers', label: 'Flyers' },
-  { id: 'branding', label: 'Branding' },
+ /* { id: 'branding', label: 'Branding' },*/
   { id: 'social-media', label: 'Social Media' },
-  { id: 'posters', label: 'Posters' },
+  { id: 'posters', label: 'Logos' },
   { id: 'identidade-visual', label: 'Identidade Visual' },
 ];
 
