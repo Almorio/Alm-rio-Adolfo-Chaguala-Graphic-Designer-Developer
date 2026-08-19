@@ -13,14 +13,17 @@
   function buildLightboxDOM() {
     const el = document.createElement('div');
     el.className = 'lightbox';
-    el.innerHTML = `
+        el.innerHTML = `
       <button class="lightbox-close" aria-label="Fechar">✕</button>
       <button class="lightbox-prev" aria-label="Anterior">‹</button>
       <div class="lightbox-stage">
         <div class="lightbox-media"></div>
         <div class="lightbox-caption">
-          <h3></h3>
-          <span></span>
+          <div class="lightbox-caption-text">
+            <h3></h3>
+            <span></span>
+          </div>
+          <a class="lightbox-visit" href="#" target="_blank" rel="noopener">Visitar ↗</a>
         </div>
       </div>
       <button class="lightbox-next" aria-label="Próximo">›</button>

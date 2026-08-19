@@ -47,6 +47,9 @@ function buildDesignItems(category, count = 9) {
       summary: DESIGN_SUMMARIES[i % DESIGN_SUMMARIES.length],
       image: `assets/images/design/${category.id}/${category.id}-${i}.jpg`,
       accent: i % 3,
+      /* Link de onde a peça pode ser vista/visitada (Instagram, Behance, site do cliente...).
+         Deixa em '' para não mostrar botão "Visitar", ou preenche com a URL real. */
+      link: 'https://color.adobe.com/explore?q=azul',
     });
   }
   return items;
