@@ -719,9 +719,49 @@ ul { list-style: none; }
 .lightbox-caption {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   margin-top: 16px;
   gap: 20px;
+}
+
+.lightbox-caption-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lightbox-caption h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.lightbox-caption span {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--c-blue-bright);
+}
+
+.lightbox-visit {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--c-blue);
+  color: var(--c-white);
+  font-family: var(--f-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  transition: transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+
+.lightbox-visit:hover {
+  background: var(--c-blue-bright);
+  transform: translateY(-2px);
 }
 
 .lightbox-caption h3 {
