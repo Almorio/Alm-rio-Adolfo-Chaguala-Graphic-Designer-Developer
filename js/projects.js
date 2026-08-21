@@ -36,7 +36,7 @@ const DESIGN_SUMMARIES = [
   'Conceito visual construído a partir do briefing do cliente e do público-alvo.',
 ];
 
-function buildDesignItems(category, count = 9) {
+function buildDesignItems(category, count = category.id === 'flyers' ? 3 : 9) {
   const items = [];
   for (let i = 1; i <= count; i++) {
     items.push({
@@ -45,7 +45,9 @@ function buildDesignItems(category, count = 9) {
       category: category.label,
       categoryId: category.id,
       summary: DESIGN_SUMMARIES[i % DESIGN_SUMMARIES.length],
-      image: `assets/images/design/${category.id}/${category.id}-${i}.jpg`,
+      image: category.id === 'flyers'
+        ? `assets/images/design/flyers/flyers-${i}.png`
+        : `assets/images/design/${category.id}/${category.id}-${i}.jpg`,
       accent: i % 3,
       /* Link de onde a peça pode ser vista/visitada (Instagram, Behance, site do cliente...).
          Deixa em '' para não mostrar botão "Visitar", ou preenche com a URL real. */
