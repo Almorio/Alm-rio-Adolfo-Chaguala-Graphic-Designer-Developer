@@ -134,7 +134,7 @@ function buildMedia(src, label, sublabel) {
   img.loading = 'lazy';
   img.onload = () => wrap.replaceWith(img);
   img.onerror = () => { /* keep placeholder */ };
-  img.src = src;
+  requestAnimationFrame(() => { img.src = src; });
 
   return wrap;
 }
