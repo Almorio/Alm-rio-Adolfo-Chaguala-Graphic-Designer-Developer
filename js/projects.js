@@ -49,7 +49,7 @@ function buildDesignItems(category, count = 9) {
       accent: i % 3,
       /* Link de onde a peça pode ser vista/visitada (Instagram, Behance, site do cliente...).
          Deixa em '' para não mostrar botão "Visitar", ou preenche com a URL real. */
-      link: 'https://color.adobe.com/explore?q=azul',
+      link: ' ',
     });
   }
   return items;

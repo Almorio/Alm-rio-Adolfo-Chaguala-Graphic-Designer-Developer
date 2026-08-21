@@ -48,6 +48,11 @@
 
     lightboxEl.querySelector('.lightbox-caption h3').textContent = item.title;
     lightboxEl.querySelector('.lightbox-caption span').textContent = item.category;
+
+    const visitLink = lightboxEl.querySelector('.lightbox-visit');
+    const hasLink = typeof item.link === 'string' && item.link.trim() !== '';
+    visitLink.href = hasLink ? item.link.trim() : '#';
+    visitLink.hidden = !hasLink;
   }
 
   function openLightbox(list, index) {
